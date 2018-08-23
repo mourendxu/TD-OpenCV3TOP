@@ -37,4 +37,4 @@ I have exposed most of the parameters of the detectMulti call as customm paramet
 
 
 
-Try different cascade files, they do effect result and speed.
+Try different cascade files, they do effect result and speed. You can find additional cascade files in the OpenCV3 distro.
