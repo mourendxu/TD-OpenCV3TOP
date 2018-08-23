@@ -27,7 +27,7 @@ Info is packed into the output frame (RGBA32Float) in the following manner:
 - I use the RGBA channels of the subsequent pixels to keep (x, y, width, height) of the detected face, in the order that they have been detected.
 
 
-- There is a Sanity Check toggle that let's you see exactly what the detector seems.
+- There is a Sanity Check toggle that let's you see exactly what the detector sees.
 
 
 Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license.
