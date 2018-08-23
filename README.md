@@ -2,7 +2,7 @@
 Touchdesigner OpenCV3 C++ TOP for FaceDetect
 
 
-Adding the OpenCV3 FaceDetect Functionality to TD via a C++ TOP. This will require a **Commercial or a Pro license** for TD. You do gain quite a bit of speed and this method is much more streamlined than the python approach.
+Adding the OpenCV3 FaceDetect Functionality to TD via a C++ TOP. This will require a **Commercial or a Pro license** for TD. You do gain quite a bit of speed and this method is much more streamlined when compared to the python approach.
 
 
 
