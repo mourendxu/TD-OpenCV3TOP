@@ -17,7 +17,7 @@ The code should also work on Mac. You just need to setup your own XCode project 
 
 
 
-# FEATURES
+## FEATURES
 
 - Once face(s) has been detected, the detected face(s)' info are passed out via **Info Dat AND Pixel Packing**.
 Info is packed into the output frame (RGBA32Float) in the following manner:
@@ -32,7 +32,7 @@ Info is packed into the output frame (RGBA32Float) in the following manner:
 
 Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license.
 
-# Additional Notes
+## Additional Notes
 I have exposed most of the parameters of the detectMulti call as customm parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info TOP down to see the exact size of each in pixels.
 
 
