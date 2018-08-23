@@ -1,5 +1,5 @@
 /* Shared Use License: This file is owned by Derivative Inc. (Derivative) and
- * can only be used, and/or modified for use, in conjunction with 
+ * can only be used, and/or modified for use, in conjunction with
  * Derivative's TouchDesigner software, and only if you are a licensee who has
  * accepted Derivative's TouchDesigner license or assignment agreement (which
  * also govern the use of this file).  You may share a modified version of this
@@ -14,17 +14,17 @@
 OpenCV3 FaceDetect C++ TOP by Da Xu
 Last Modified: 2018/8/23
 
-Purpose: 
+Purpose:
 		 Adding the OpenCV3 FaceDetect Functionality to TD via a C++ TOP
-		 This will require a Commercial or a Pro license for TD. 
+		 This will require a Commercial or a Pro license for TD.
 		 You do gain quite a bit of speed and this method is much more streamlined than the python approach.
 
 
-Features: 
+Features:
          Once face(s) has been detected, the detected face(s)' info are passed out via Info Dat AND Pixel Packing.
 		 Info is packed into the output frame (RGBA32Float) in the following manner:
-		 1st Pixel's R contains how many faces have been detected. 
-		 I use the RGBA channels of the consequent pixels to keep (x, y, width, height) of the detected face, in the order
+		 1st Pixel's R contains how many faces have been detected.
+		 I use the RGBA channels of the subsequent pixels to keep (x, y, width, height) of the detected face, in the order
 		 that they have been detected.
 
 */
@@ -234,7 +234,7 @@ OpenCV3TOP::execute(const TOP_OutputFormatSpecs* outputFormat,
 	//Loading input buffer into cv::Mat
 	Mat frame(height, width, CV_8UC4, (void*)src);
 	Mat frameGray;
-	
+
 	//Converting to Gray-scale
 	cvtColor(frame, frameGray, COLOR_BGRA2GRAY);
 
@@ -245,17 +245,17 @@ OpenCV3TOP::execute(const TOP_OutputFormatSpecs* outputFormat,
 		equalizeHist(frameGray, frameGray);
 
 	}
-		
 
-	
+
+
 	//Detect them faces
-	faceCascade.detectMultiScale(frameGray, v_Faces, 1.1, nearest_neighbor, 0|CASCADE_SCALE_IMAGE, Size(minScaledSize, minScaledSize), Size(maxScaledSize, maxScaledSize));	
+	faceCascade.detectMultiScale(frameGray, v_Faces, 1.1, nearest_neighbor, 0|CASCADE_SCALE_IMAGE, Size(minScaledSize, minScaledSize), Size(maxScaledSize, maxScaledSize));
 
 	//How many faces were detected?
 	faceDetected = v_Faces.size();
 
 
-	//Pixel packing array. 
+	//Pixel packing array.
 	//Setting it to nullptr, just in case.
 	float* faceInfo = nullptr;
 
@@ -272,13 +272,13 @@ OpenCV3TOP::execute(const TOP_OutputFormatSpecs* outputFormat,
 	memset(mem, 0, outputFormat->height * outputFormat->width * 4);
 
 	if (faceDetected) {
-		
+
 		//Pixel Packing
 
-		//Allocating memory for pixel packing 
+		//Allocating memory for pixel packing
 		//# of faces plus 1 pixels. The extra pixel, the first pixel is for storing how many faces have been detected
 		faceInfo = new float[(faceDetected+1)*4]();
-		
+
 		faceInfo[0] = (float) faceDetected;
 		faceInfo[1] = faceInfo[2] = faceInfo[3] = 0;
 
@@ -293,12 +293,12 @@ OpenCV3TOP::execute(const TOP_OutputFormatSpecs* outputFormat,
 			if (b_SanityCheck) {
 
 				cv::rectangle(frameGray, Point(v_Faces[i].x, v_Faces[i].y), Point(v_Faces[i].x + v_Faces[i].width, v_Faces[i].y + v_Faces[i].height), 1, LINE_8, 0);
-				
+
 			}
 
 		}
 
-		//I could write directly into mem, but this way is just more sane. 
+		//I could write directly into mem, but this way is just more sane.
 		//Computers are so fast these days(esp if you are running this code), by not writing directly into buffer, you lose maybe a fraction of a frame.
 		//Plus, the code is bit more readable this way.
 		memcpy(mem, faceInfo, sizeof(float) * 4 * (faceDetected+1));
@@ -307,9 +307,9 @@ OpenCV3TOP::execute(const TOP_OutputFormatSpecs* outputFormat,
 	}
 	else {
 
-		
-		faceInfo = new float[4]{ 0, 0, 0, 0 }; 
-		memcpy(mem, faceInfo, sizeof(float) * 4 ); 
+
+		faceInfo = new float[4]{ 0, 0, 0, 0 };
+		memcpy(mem, faceInfo, sizeof(float) * 4 );
 		delete[] faceInfo;
 	}
 
@@ -317,7 +317,7 @@ OpenCV3TOP::execute(const TOP_OutputFormatSpecs* outputFormat,
 		//See what the detect call sees
 		imshow("Sanity Check", frameGray);
 	}
-	
+
 
     outputFormat->newCPUPixelDataLocation = textureMemoryLocation;
     textureMemoryLocation = !textureMemoryLocation;
@@ -346,7 +346,7 @@ OpenCV3TOP::getInfoCHOPChan(int32_t index, OP_InfoCHOPChan* chan)
 		chan->value = (float)myExecuteCount;
 	}
 
-	
+
 
 	if (index == 1) {
 		chan->name = "load_errors";
@@ -386,7 +386,7 @@ OpenCV3TOP::getInfoCHOPChan(int32_t index, OP_InfoCHOPChan* chan)
 }
 
 
-const char* 
+const char*
 OpenCV3TOP::getErrorString() {
 
 	if (myErrors == 1) {
@@ -405,7 +405,7 @@ OpenCV3TOP::getErrorString() {
 }
 
 
-bool		
+bool
 OpenCV3TOP::getInfoDATSize(OP_InfoDATSize* infoSize)
 {
 	infoSize->rows = 4;
@@ -434,7 +434,7 @@ OpenCV3TOP::getInfoDATEntries(int32_t index,
 
 		maxOutput = nEntries;
 	}
-	
+
 	//X
 	if (index == 0) {
 #ifdef WIN32
@@ -588,7 +588,7 @@ OpenCV3TOP::setupParameters(OP_ParameterManager* manager)
 		OP_ParAppendResult res = manager->appendFloat(np);
 		assert(res == OP_ParAppendResult::Success);
 	}
-	
+
 	//Nearest Neighbor
 	{
 		OP_NumericParameter np;
@@ -598,7 +598,7 @@ OpenCV3TOP::setupParameters(OP_ParameterManager* manager)
 
 		np.minSliders[0] = 1;
 		np.maxSliders[0] = 10;
-		
+
 		np.minValues[0] = 1;
 		np.maxValues[0] = 100;
 
@@ -659,7 +659,7 @@ OpenCV3TOP::setupParameters(OP_ParameterManager* manager)
 
 		np.name = "Reset";
 		np.label = "Reset";
-		
+
 		OP_ParAppendResult res = manager->appendPulse(np);
 		assert(res == OP_ParAppendResult::Success);
 	}
@@ -676,4 +676,3 @@ OpenCV3TOP::pulsePressed(const char* name)
 
 
 }
-
