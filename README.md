@@ -35,3 +35,6 @@ Please check Greg Finger's demo Touchdesigner project to see how to use this C++
 # Additional Notes
 I have exposed most of the parameters of the detectMulti call as customm parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info TOP down to see the exact size of each in pixels.
 
+
+
+Try different cascade files, they do effect result and speed.
