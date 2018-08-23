@@ -22,7 +22,7 @@ The code should also work on Mac. You just need to setup your own XCode project 
 - Once face(s) has been detected, the detected face(s)' info are passed out via **Info Dat AND Pixel Packing**.
 Info is packed into the output frame (RGBA32Float) in the following manner:
 
-- 1st Pixel's R contains how many faces have been detected. 
+- The 1st Pixel's R contains how many faces have been detected. 
 
 - I use the RGBA channels of the subsequent pixels to keep (x, y, width, height) of the detected face, in the order that they have been detected.
 
