@@ -10,7 +10,7 @@ Created by Da Xu, at the request of Greg Finger of PLGRM Visuals.
 
 This project was written with OpenCV3 3.4.1. But it should compile just fine with the 3.4.2, which is the latest version of OpenCV3.
 
-The code should also work on Mac. You just need to setup your own XCode project and compile your own OpenCV3 binaries, as there aren't a binary distro of the lib for Mac.
+The code should also work on Mac. You just need to setup your own XCode project and compile your own OpenCV3 binaries, as there isn't a binary distro of the lib for Mac.
 
 
 
