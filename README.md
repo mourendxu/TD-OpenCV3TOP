@@ -42,4 +42,6 @@ Try different cascade files, they do effect result and speed. You can find addit
 
 
 ## Demo
-I have included a compiled version of the DLL. However, you still need to download the OpenCV dlls from opencv.org to make the demo run. You also need the latest version of Touchdesigner, which at this moment is 2018.25000.
+I have included a compiled version of the DLL. However, you still need to download the OpenCV dlls from opencv.org to make the demo run. You also need the latest version of Touchdesigner, which at this moment is 2018.25000. 
+
+You need to put the opencv world dll into the same directory as OpenCV3TOP.dll.
