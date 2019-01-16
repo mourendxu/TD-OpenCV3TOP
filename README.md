@@ -44,4 +44,18 @@ Try different cascade files, they do effect result and speed. You can find addit
 ## Demo
 I have included a compiled version of the DLL. However, you still need to download the OpenCV dlls from opencv.org to make the demo run. You also need the latest version of Touchdesigner, which at this moment is 2018.25000. 
 
-You need to put the opencv world dll into the same directory as OpenCV3TOP.dll.
+You need to put the opencv world dll into the same directory as OpenCV3TOP.dll. 
+
+Specific instructions below:
+
+1. Goto opencv.org, under Releases, download the Win Pack. 
+
+2. Run the resulting exe file. It will ask you to extract the lib to somewhere. Find a nice place for it, and extract
+
+3. Once the extraction is done, open up Explorer, and go to the dir that you have extracted to. 
+
+4. There should be an opencv dir, go into it, and then goto build\x64\vc14\bin. 
+
+5. Copy the opencv_world341.dll to the Demo/TD-cppFace-reduced/Data/ dir, essentially where my dll lives and is referenced, that you got from my github. NOTE: DO NOT COPY THE opencv_world341d.dll. That's for debugging. It's hella slow.
+
+opencv\build\etc contains the cascade files you need. The names are self-explanatory.
