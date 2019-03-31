@@ -4,7 +4,8 @@
 _**Contributors**_
 
 - **Da Xu** - *Development and Documentation*
-- **[Greg Finger of PLGRM Visuals](https://github.com/gregfinger)** - *Demo Projects, Testing and Foreman*
+- **[Greg Finger of PLGRM Visuals](https://github.com/gregfinger)** - *Development, Demo Projects, Testing and Foreman*
+
 
 
 
@@ -20,35 +21,48 @@ Yes, we skipped over a few minor versions. But since we added quite a few things
 
 - The plugin is now **cross-platform**. We now have binary releases for both **Mac** and **Windows**, along with the necessary code and project files to build it on your own, if you so choose.
 - The plugin now supports Touchdesigner **Stable** and **Experimental** builds. The Experimental builds implemented a new way of dealing with C++ plugins, and they allow users to use C++ plugins without a Commercial or Pro License. Make sure you use the correct binary for the build of TD you are using.
-- Greg Finger has provided a demo toe file for the Experimental builds.
-- Extensive updates have been made to the documentation. We now includes instructions on how to build OpenCV on Mac, as well as build instructions for the plugin.
+- Greg Finger created a demo toe file for the Experimental builds.
+- Extensive updates have been made to the documentation. We now include instructions on how to build OpenCV on Mac, as well as build instructions for the plugin.
+- scaleFactor has been exposed to the user via parameters.
 
 
 
 
-## FEATURES
+## How Does It Work?
 
-- Once face(s) has been detected, the detected face(s)' info are passed out via **Info Dat AND Pixel Packing**.
-Info is packed into the output frame (RGBA32Float) in the following manner:
+- Once face(s) has been detected, the detection results are passed out via **Info Dat AND Pixel Packing**.
+Results are packed into the output frame (RGBA32Float) in the following manner:
 
 - The 1st Pixel's R contains how many faces have been detected. 
 
-- I use the RGBA channels of the subsequent pixels to keep (x, y, width, height) of the detected face, in the order that they have been detected.
+- I use the RGBA channels of the subsequent pixels to store (x, y, width, height) of the detected face(s), in the order that they have been detected.
 
 
-- There is a Sanity Check toggle that let's you see exactly what the detector sees.
+- There is a Sanity Check toggle that let's you see exactly what the detector sees. *This feature is only available on Windows.*
 
 
-Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license.
+Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license if you are using it with the stable build.
 
-## Additional Notes
-I have exposed most of the parameters of the detectMulti call as custom parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info TOP down to see the exact size of each in pixels.
+## Additional Usage Notes
+I have exposed most of the parameters of the detectMulti call as custom parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info CHOP down to see the exact size of each in pixels.
 
 
 
 Try different cascade files, they do effect result and speed. You can find additional cascade files in the OpenCV3 distro.
 
 
+
+## Usage
+See Greg Finger's demo projects for usage, particularly on how to deal with the output of the plugin.
+
+
+### Binary Release
+
+#### Stable
+
+
+#### Experimental
+Please follow the instructions on the Touchdesigner Wiki with regard to [how to install the Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
 
 ## Demo
 I have included a compiled version of the DLL. However, you still need to download the OpenCV dlls from opencv.org to make the demo run. You also need the latest version of Touchdesigner, which at this moment is 2018.25000. 
