@@ -57,12 +57,23 @@ See Greg Finger's demo projects for usage, particularly on how to deal with the 
 
 
 ### Binary Release
+A quick word on **Windows** vs. **Mac**
+
+Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to do this part yourself. Please see instructions below. We chose this path due to the fact that this particular task is rather trivial. We try not to include external libraries in our binary release unless absolutely necessary. 
+
+Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. That's why we decided to package everything together into a single unit. 
+
+
 
 #### Stable
 
 
+
 #### Experimental
-Please follow the instructions on the Touchdesigner Wiki with regard to [how to install the Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
+Please follow the instructions on Touchdesigner Wiki with regard to [how to install the Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
+
+
+
 
 ## Demo
 I have included a compiled version of the DLL. However, you still need to download the OpenCV dlls from opencv.org to make the demo run. You also need the latest version of Touchdesigner, which at this moment is 2018.25000. 
