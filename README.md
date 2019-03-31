@@ -1,8 +1,23 @@
 # TD-OpenCV3TOP
 Touchdesigner OpenCV3 C++ TOP for FaceDetect
 
+C++ Development by Da Xu. Demo by [Greg Finger of PLGRM Visuals](https://github.com/gregfinger).
 
-Adding the OpenCV3 FaceDetect Functionality to TD via a C++ TOP. This will require a **Commercial or a Pro license** for TD. You do gain quite a bit of speed when compared to using Python and the OpenCV that came with Touchdesigner. This method is also much more streamlined than the Python approach. 
+
+This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. Though OpenCV is already integrated into TD, but it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in way that can be acted upon immediately. It makes the whole process much more streamlined and faster.
+
+
+## Release Notes v1.5 3/31/2019
+Yes, we skipped over a few minor versions. But since we added quite a few things to this release, we feel we deserve the 1.5.
+
+
+- The plugin is now cross-platform. We now have binary releases for both Mac and Windows, along with the necessary code and project files to build it on your own.
+- The plugin now supports Touchdesigner Stable and Experimental builds. The Experimental builds have implemented a new way of dealing with C++ plugins, and they allow users to use C++ plugins without a Commercial or Pro License. Make sure you use the correct binary for the build of TD you are using.
+- Greg Finger has provided a demo toe file for the Experimental builds.
+- Extensive update has been made to the documentation. We now in
+
+
+This will require a **Commercial or a Pro license** for TD. You do gain quite a bit of speed when compared to using Python and the OpenCV that came with Touchdesigner. This method is also much more streamlined than the Python approach. 
 
 
 
