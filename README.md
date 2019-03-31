@@ -2,8 +2,7 @@
 ## Touchdesigner OpenCV3 C++ TOP for FaceDetect
 
 *C++ Development by Da Xu*
-
-*Demo by [Greg Finger of PLGRM Visuals](https://github.com/gregfinger)*
+*Demo and Testing by [Greg Finger of PLGRM Visuals](https://github.com/gregfinger)*
 
 
 This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
