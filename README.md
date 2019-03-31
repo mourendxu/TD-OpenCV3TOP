@@ -1,10 +1,11 @@
 # TD-OpenCV3TOP
 ## Touchdesigner OpenCV3 C++ TOP for FaceDetect
 
-*Contributors*
+_**Contributors**_
 
-- Da Xu - *Development*
-- [Greg Finger of PLGRM Visuals](https://github.com/gregfinger) - *Demo Projects, Testing and Foreman*
+- **Da Xu** - *Development and Documentation*
+- **[Greg Finger of PLGRM Visuals](https://github.com/gregfinger)** - *Demo Projects, Testing and Foreman*
+
 
 
 This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
@@ -17,23 +18,10 @@ Though OpenCV is already integrated into TD, it's done via Python, which is not 
 Yes, we skipped over a few minor versions. But since we added quite a few things to this release, we feel we deserve the 1.5.
 
 
-- The plugin is now cross-platform. We now have binary releases for both Mac and Windows, along with the necessary code and project files to build it on your own.
-- The plugin now supports Touchdesigner Stable and Experimental builds. The Experimental builds have implemented a new way of dealing with C++ plugins, and they allow users to use C++ plugins without a Commercial or Pro License. Make sure you use the correct binary for the build of TD you are using.
+- The plugin is now **cross-platform**. We now have binary releases for both **Mac** and **Windows**, along with the necessary code and project files to build it on your own, if you so choose.
+- The plugin now supports Touchdesigner **Stable** and **Experimental** builds. The Experimental builds implemented a new way of dealing with C++ plugins, and they allow users to use C++ plugins without a Commercial or Pro License. Make sure you use the correct binary for the build of TD you are using.
 - Greg Finger has provided a demo toe file for the Experimental builds.
-- Extensive update has been made to the documentation. We now in
-
-
-This will require a **Commercial or a Pro license** for TD. You do gain quite a bit of speed when compared to using Python and the OpenCV that came with Touchdesigner. This method is also much more streamlined than the Python approach. 
-
-
-
-Created by Da Xu, at the request of Greg Finger of PLGRM Visuals.
-
-This project was written with OpenCV3 3.4.1. But it should compile just fine with the 3.4.2, which is the latest version of OpenCV3.
-
-The code should also work on Mac. You just need to setup your own XCode project and compile your own OpenCV3 binaries, as there isn't a binary distro of the lib for Mac.
-
-
+- Extensive updates have been made to the documentation. We now includes instructions on how to build OpenCV on Mac, as well as build instructions for the plugin.
 
 
 
