@@ -4,7 +4,10 @@
 C++ Development by Da Xu. Demo by [Greg Finger of PLGRM Visuals](https://github.com/gregfinger).
 
 
-This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. Though OpenCV is already integrated into TD, but it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in way that can be acted upon immediately. It makes the whole process much more streamlined and faster.
+This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
+
+
+Though OpenCV is already integrated into TD, it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in way that can be acted upon immediately. It makes the whole process much more streamlined and faster.
 
 
 ## Release Notes v1.5 3/31/2019
