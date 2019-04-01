@@ -75,7 +75,7 @@ Such is the case with **Mac**. Since Apple has decided to hide the standard LD_L
 
 
 
-#### Stable Touchdesigner Build
+#### - Stable Touchdesigner Build
 You will load the plugin the same as any other Cplusplus plugin. 
 
 **Windows** users will need to copy and paste the OpenCV world DLL into the same directory as the binary release DLL. 
@@ -83,7 +83,7 @@ You will load the plugin the same as any other Cplusplus plugin.
 **Mac** Nothing to do.
 
 
-#### Experimental
+#### - Experimental
 Please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
 
 **Windows** users will need to copy and paste the OpenCV plugin into the same directory as the binary release DLL. 
