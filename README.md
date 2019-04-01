@@ -53,7 +53,7 @@ Results are packed into the output frame (RGBA32Float) in the following manner:
 
 Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license if you are working with the Stable branch of Touchdesigner.
 
-## Additional Usage Notes
+## Additional Notes
 I have exposed most of the parameters of the detectMulti call as custom parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info CHOP down to see the exact size of each in pixels.
 
 
@@ -115,13 +115,17 @@ opencv\build\etc contains the cascade files you need. The names are self-explana
 
 **Checklist before you run Build**
 
-* OpenCV Library. This will include the headers, dynamic library for compiling, and DLL or dylib for running. **Windows** users can download binary releases from OpenCV's website. **Mac** users will have to download the source code and build their own.
+* OpenCV Library. This will include the headers, dynamic library for compiling, and DLL or dylib for running. **Windows** users can download binary releases from OpenCV's website. **Mac** users will have to download the source code and build their own, build instructions for the OpenCV library are below.
 * Set the correct Headers search path. This will most likely be *opencv_install_dir/build/include* on **Windows** and *opencv_install_dir/include* on **Mac**. 
 * Set the correct Library search path. This will most likely be *opencv_install_dir/build/x64/vc15/lib* on **Windows** and *opencv_install_dir/lib* on **Mac**.
 * Set the dynamic library name. See specific instructions below.
 
 
 
+### OpenCV Build Instructions for Mac
 
-
-
+1. Download and install the [CMake binary distribution](https://cmake.org/download/)
+2. Download and extract OpenCV source code, i.e. */Users/your_name/Documents/opencv.3.4.4* 
+3. Open CMake, Click on *Browse Source*, and navigate to the directory where you have extracted the source code to, i.e. */Users/your_name/Documents/opencv.3.4.4*
+4. Create a build directory. i.e. */Users/your_name/Documents/opencv.3.4.4/build*
+5. Click on *Browse Build*, and navigate to the build directory you have created in Step 4.
