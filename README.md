@@ -172,11 +172,13 @@ At this point, you should have a binary build of the OpenCV library of your choi
 Please follow [these instructions](https://docs.derivative.ca/Experimental:Custom_Operators#Building_on_macOS_using_XCode) from Derivative to get at your plugin. Alternatively, you can also set your *File -> Project Settings -> Per-User Project Settings -> Advanced -> Build Location* to Custom and Relative to Workspace. This will put all your builds relative to your xcode project.
 
 6. Once you have access to the compiled plugin, you need to open **Terminal** and run the following command on your plugin. *Make sure you are in the same directory as your plugin*
-    1. *otool -L plugin_name.plugin/Contents/MacOS/executable_name*. Make sure you replace the plug_name and executable names accordingly. *\*Tip, use tab to auto-complete your path and file names. Google tab auto complete if in doubt*
+    1. *otool -L plugin_name.plugin/Contents/MacOS/executable_name* 
+    
+    Make sure you replace the plug_name and executable names accordingly. *\*Tip, use tab to auto-complete your path and file names. Google tab auto complete if in doubt*
     2. In the output, look for the @loader_path string, speciﬁcally the library name(without the path) it is pointing to.
 
 7. Add/Modify in Run Script Phase. The purpose of this step is to modify the executable to use the dylib that was copied into the plugin bundle during the Copy Resources phase. This way, you do not need to install Opencv in an expected path, it will also help with confusions caused by different versions, as homebrew is not very fond of different versions. 
-    1. Go to Build Phase, Add the Run Script phase. If you are using the Xcode project we have provided, you will just need to modify the shell script, this step can be skipped.
+    1. Go to Build Phase, Add the Run Script phase. If you are using the Xcode project we have provided, you will just need to modify the first line of the shell script, this step can be skipped.
     2. Add/Modify the following shell script (There are ONLY two lines. NOTE THE LINE BREAKS! Make sure DYLIB in the shell script is set to the same lib name you got from Step 6. Name ONLY, no paths, as the path will be added for you by the script. 
 
     ````
