@@ -174,7 +174,7 @@ Please follow [these instructions](https://docs.derivative.ca/Experimental:Custo
 6. Once you have access to the compiled plugin, you need to open **Terminal** and run the following command on your plugin. *Make sure you are in the same directory as your plugin*
     1. *otool -L plugin_name.plugin/Contents/MacOS/executable_name* 
     
-    Make sure you replace the plug_name and executable names accordingly. *\*Tip, use tab to auto-complete your path and file names. Google tab auto complete if in doubt*
+    Make sure you replace the plugin_name and executable names accordingly. *\*Tip, use tab to auto-complete your path and file names. Google tab auto complete if in doubt*
     
     2. In the output, look for the @loader_path string, speciﬁcally the library name(without the path) it is pointing to.
 
@@ -186,3 +186,18 @@ Please follow [these instructions](https://docs.derivative.ca/Experimental:Custo
     export DYLIB=libopencv_world.3.4.dylib 
     install_name_tool -change @rpath/$DYLIB @loader_path/../ Resources/$DYLIB “$TARGET_BUILD_DIR/$TARGET_NAME.plugin/ Contents/MacOS/$PRODUCT_NAME”
     ````
+
+8. Build again. The resulting plugin bundle will contain the needed dylib and the executable will know where to find it.
+
+9. Whew!
+
+
+#### Windows
+
+1.  Install OpenCV. There are ofﬁcial binary releases, it’s recommended that you use one of those. 
+    1. Download the version of binary release you intend to use, and extract to a directory, i.e. *C:\OpenCV3.4*
+
+2. Update Header Path and Linking Path, for the project, to point to the installed OpenCV
+**BE AWARE** of which Proﬁle you are modifying the properties for. For most of the items below, you can choose All, exceptions will be noted.
+    1. Modify Header Path - Right click on your Project (NOTE: Not the Solution), choose Properties 
+        1. Under **C/C++ -> General -> Additional Include Directories** Modify the value to include your *opencv_install_dir\build\include* 
