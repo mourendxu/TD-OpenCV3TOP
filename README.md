@@ -14,7 +14,7 @@ _**The Binary Release has been built against:**_
 - OpenCV version 3.4.4. \*3.4.5 will work as well.
 
 
-
+-**Functionality/Purpose**_
 This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
 
 
