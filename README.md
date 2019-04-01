@@ -83,7 +83,7 @@ You will load the plugin the same as any other Cplusplus plugin.
 **Mac** Nothing to do.
 
 
-#### - Experimental
+#### - Experimental Build
 Please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
 
 **Windows** users will need to copy and paste the OpenCV plugin into the same directory as the binary release DLL. 
@@ -99,7 +99,7 @@ Detailed instructions:
 
 1. Goto [opencv.org's Releases page](https://opencv.org/releases.html), and download the Win Pack. 
 
-2. Run the resulting exe file. It will ask you to extract the lib to somewhere. Find a nice place for it, and extract
+2. Run downloaded exe file. It will ask you to extract the libs to a location of your choice. Find a nice and warm cozy place for it, and click extract.
 
 3. Once the extraction is done, open up Explorer, and go to the dir that you have extracted to. 
 
