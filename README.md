@@ -22,6 +22,14 @@ This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP.
 Though OpenCV has already been integrated into TD, it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in a way that can be acted upon immediately. It makes the whole process much more streamlined and faster.
 
 
+
+## Table of Contents
+1. [Release Notes](https://github.com/mourendxu/TD-OpenCV3TOP#release-notes-v15-3312019)
+2. [How Does It Work?](https://github.com/mourendxu/TD-OpenCV3TOP#how-does-it-work)
+3. [Usage](https://github.com/mourendxu/TD-OpenCV3TOP#usage)
+4. [Build Instructions](https://github.com/mourendxu/TD-OpenCV3TOP#build-instructions)
+    1. [Building Checklist]()
+
 ## Release Notes v1.5 3/31/2019
 Yes, we skipped over a few minor versions. But since we added quite a few things to this release, we feel we deserve the 1.5.
 
@@ -113,7 +121,7 @@ opencv\build\etc contains the cascade files you need. The names are self-explana
 
 ## Build Instructions
 
-**Checklist before you run Build**
+### **Checklist before you run Build**
 
 * OpenCV Library. This will include the headers, dynamic library for compiling, and DLL or dylib for running. **Windows** users can download binary releases from OpenCV's website. **Mac** users will have to download the source code and build their own, build instructions for the OpenCV library are below.
 * Set the correct Headers search path. This will most likely be *opencv_install_dir\build\include* on **Windows** and *opencv_install_dir/include* on **Mac**. 
