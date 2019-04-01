@@ -99,12 +99,29 @@ Detailed instructions:
 
 1. Goto [opencv.org's Releases page](https://opencv.org/releases.html), and download the Win Pack. 
 
-2. Run downloaded exe file. It will ask you to extract the libs to a location of your choice. Find a nice and warm cozy place for it, and click extract.
+2. Run downloaded exe file. It will ask you to extract the libs to a location of your choice. Find a nice and warm cozy place for it, then click extract.
 
 3. Once the extraction is done, open up Explorer, and go to the dir that you have extracted to. 
 
 4. There should be an opencv dir, go into it, and then goto build\x64\vc14\bin. 
 
-5. Copy the opencv_world341.dll to the Demo/TD-cppFace-reduced/Data/ dir, essentially where my dll lives and is referenced, that you got from my github. NOTE: DO NOT COPY THE opencv_world341d.dll. That's for debugging. It's hella slow.
+5. Copy the opencv_world*version_number*.dll to the same directory as our binary release. NOTE: **DO NOT USE** THE opencv_world*version_number*d.dll. That's for debugging. It's hella slow.
 
 opencv\build\etc contains the cascade files you need. The names are self-explanatory.
+
+
+
+## Build Instructions
+
+**Checklist before you run Build**
+
+* OpenCV Library. This will include the headers, dynamic library for compiling, and DLL or dylib for running. **Windows** users can download binary releases from OpenCV's website. **Mac** users will have to download the source code and build their own.
+* Set the correct Headers search path. This will most likely be *opencv_install_dir/build/include* on **Windows** and *opencv_install_dir/include* on **Mac**. 
+* Set the correct Library search path. This will most likely be *opencv_install_dir/build/x64/vc15/lib* on **Windows** and *opencv_install_dir/lib* on **Mac**.
+* Set the dynamic library name. See specific instructions below.
+
+
+
+
+
+
