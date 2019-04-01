@@ -54,7 +54,7 @@ Results are packed into the output frame (RGBA32Float) in the following manner:
 Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license if you are working with the Stable branch of Touchdesigner.
 
 ## Additional Notes
-I have exposed most of the parameters of the detectMulti call as custom parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info CHOP down to see the exact size of each in pixels.
+We have exposed most of the parameters of the detectMulti call as custom parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info CHOP down to see the exact size of each in pixels.
 
 
 
@@ -211,3 +211,9 @@ Please follow [these instructions](https://docs.derivative.ca/Experimental:Custo
     1. In the main window, under the top menus, Select *Release* and *x64* for Solution Conﬁguration.
     2. From the **Build** menu, choose **Build Solution**. If this is **NOT** your ﬁrst time building this solution, I personally prefer to use Rebuild Solution. Just to flush out any compiling gremlins. 
     3. If you are building for the Experimental Touchdesigner branch, you will need to first [install the plugin](https://docs.derivative.ca/Experimental:Custom_Operators). Either way, ou will need to copy opencv world dll into the same directory as the compiled plugin dll to run the plugin. The opencv dll should be located in *opencv_install_dir\build\x64\vc15\bin*. 
+
+
+
+### Other
+* If the CS gods be willing, we might do a CUDA version of this plugin. The documentation might be as long as this one.
+* Have fun and maybe make a TD version of TikTok.
