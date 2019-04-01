@@ -11,14 +11,15 @@ _**Contributors**_
 _**The Binary Release has been built against:**_
 - **Stable** Touchdesinger 2018.27910
 - **Experimental** Touchdesigner 2019.12330
-- OpenCV version 3.4.4. \*3.4.5 will work as well.
+- OpenCV version 3.4.4 for **Mac** and 3.4.5 for **Windows**.
 
 
-_**Functionality/Purpose**_
+_**Functionality/Purpose:**_
+
 This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
 
 
-Though OpenCV is already integrated into TD, it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in way that can be acted upon immediately. It makes the whole process much more streamlined and faster.
+Though OpenCV has already been integrated into TD, it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in a way that can be acted upon immediately. It makes the whole process much more streamlined and faster.
 
 
 ## Release Notes v1.5 3/31/2019
@@ -26,10 +27,11 @@ Yes, we skipped over a few minor versions. But since we added quite a few things
 
 
 - The plugin is now **cross-platform**. We now have binary releases for both **Mac** and **Windows**, along with the necessary code and project files to build it on your own, if you so choose.
-- The plugin now supports Touchdesigner **Stable** and **Experimental** builds. The Experimental builds implemented a new way of dealing with C++ plugins, and they allow users to use C++ plugins without a Commercial or Pro License. Make sure you use the correct binary for the build of TD you are using.
-- Greg Finger created a demo toe file for the Experimental builds.
+- The plugin now supports both Touchdesigner **Stable** and **Experimental** branches. The Experimental branch has implemented a new way of dealing with C++ plugins, and it allows users to utilize C++ plugins without a Commercial or Pro License. Make sure you use the correct binary release for the branch of TD you are using.
+- Greg Finger has created a demo toe file for the Experimental branch.
 - Extensive updates have been made to the documentation. We now include instructions on how to build OpenCV on Mac, as well as build instructions for the plugin.
 - scaleFactor has been exposed to the user via parameters.
+- The plugin now forces 32 bit float data format.
 
 
 
@@ -46,8 +48,10 @@ Results are packed into the output frame (RGBA32Float) in the following manner:
 
 - There is a Sanity Check toggle that let's you see exactly what the detector sees. *This feature is only available on Windows.*
 
+- If no face was found, the first pixel will be 0 across the board.
 
-Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license if you are using it with the stable build.
+
+Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license if you are working with the Stable branch of Touchdesigner.
 
 ## Additional Usage Notes
 I have exposed most of the parameters of the detectMulti call as custom parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info CHOP down to see the exact size of each in pixels.
@@ -67,14 +71,14 @@ A quick word on **Windows** vs. **Mac**
 
 Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to handle this part yourself. Please refer to the instructions below. It's quite painless. We chose this path due to the fact that this particular task is rather trivial for the user. We try not to include external libraries in our binary release unless absolutely necessary. 
 
-Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. On top of that, OpenCV does not provide a binary release of their library for Mac. That's why we have decided to package everything together into a single unit. The amount of work required to get everything working on **Mac** has exceeded our standard for convenience. 
+Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. On top of that, OpenCV does not provide a binary release of their library for Mac. That's why we have decided to package everything together into a single unit. The amount of work required to get everything working on **Mac** has exceeded our standards for convenience. 
 
 
 
 #### Stable Touchdesigner Build
 You will load the plugin the same as any other Cplusplus plugin. 
 
-**Windows** users will need to copy and paste the OpenCV plugin into the same directory as the binary release DLL. 
+**Windows** users will need to copy and paste the OpenCV world DLL into the same directory as the binary release DLL. 
 
 **Mac** Nothing to do.
 
@@ -88,12 +92,12 @@ Please follow the instructions from Touchdesigner Wiki on [how to install Custom
 
 
 
-#### Windows-specific Instructions for Running
-You need to put the opencv world dll into the same directory as OpenCV3TOP.dll. 
+#### Windows-specific Instructions for using the plugin
+You need to put the opencv world dll into the same directory as our binary release. 
 
-Specific instructions below:
+Detailed instructions:
 
-1. Goto opencv.org, under Releases, download the Win Pack. 
+1. Goto [opencv.org's Releases page](https://opencv.org/releases.html), and download the Win Pack. 
 
 2. Run the resulting exe file. It will ask you to extract the lib to somewhere. Find a nice place for it, and extract
 
