@@ -148,10 +148,10 @@ opencv\build\etc contains the cascade files you need. The names are self-explana
 At this point, you should have a binary build of the OpenCV library of your choice on your local hard drive. *opencv_install_dir* from here and on will be used to refer to this location.
 
 1. Add/Modify Framework reference to opencv library. 
-    1. If you are using our xcode project, which is recommended, you will need to first delete the existing reference to OpenCV world dylib.
+    1. If you are using our xcode project, which is recommended, you will need to first delete the existing reference to OpenCV world dylib, under **Frameworks** and **General -> Linked Frameworks and Libraries**, see below.
     2. Then navigate to **General -> Linked Frameworks and Libraries**. *If you don't know how to get to this panel, please ask Google*
     3. Use Finder and navigate to your OpenCV install directory, under *lib*, there should be several world libraries. Two of them will be aliases or symlinks to the actual build. 
-    4. Then from Finder, Drag and Drop (DO NOT use the plus sign, this will dereference the alias) the alias with only the major and minor version, i.e. *libopencv_world.3.4.dylib*. This ﬁle will be needed for linking and packaging.
+    4. Then from Finder, Drag and Drop (DO NOT use the plus sign, this will dereference the alias) the alias with only the major and minor version, i.e. *libopencv_world.3.4.dylib*, on to **General -> Linked Frameworks and Libraries**. This ﬁle will be needed for linking and packaging.
 
 2. Add/Modify Search Paths for Headers and Libraries 
     1. Navigate to **Build Settings -> Search Paths**. *Again, if you don't know how to get to this panel, please ask Google*
@@ -200,4 +200,14 @@ Please follow [these instructions](https://docs.derivative.ca/Experimental:Custo
 2. Update Header Path and Linking Path, for the project, to point to the installed OpenCV
 **BE AWARE** of which Proﬁle you are modifying the properties for. For most of the items below, you can choose All, exceptions will be noted.
     1. Modify Header Path - Right click on your Project (NOTE: Not the Solution), choose Properties 
-        1. Under **C/C++ -> General -> Additional Include Directories** Modify the value to include your *opencv_install_dir\build\include* 
+        1. Under **C/C++ -> General -> Additional Include Directories**, modify the value to include your *opencv_install_dir\build\include* 
+    2. Modify Linker/Library Path
+        1. Under **Linker -> General -> Additional Library Directories**, modify the value to include your *opencv_install_dir\build\x64\vc15\lib\*. Based on empirical evidence, using either vc14 or vc15 doesn't seem to make a difference.
+        2. Under **Linker -> Input -> Additional Dependecies**, you need to add/ modify the name of the opencv_world lib that’s in the lib directory you added in the step above. \*Name ONLY, no path. You can just type it in, make sure you add a semicolon to separate it from the other entries.
+            1. For Release Conﬁguration, use the standard lib, i.e. *opencv_world345.lib*
+            2. For Debug Conﬁguration, use the debug lib, i.e. *opencv_world345d.lib*
+
+3. Build
+    1. In the main window, under the top menus, Select *Release* and *x64* for Solution Conﬁguration.
+    2. From the **Build** menu, choose **Build Solution**. If this is **NOT** your ﬁrst time building this solution, I personally prefer to use Rebuild Solution. Just to flush out any compiling gremlins. 
+    3. If you are building for the Experimental Touchdesigner branch, you will need to first [install the plugin](https://docs.derivative.ca/Experimental:Custom_Operators). Either way, ou will need to copy opencv world dll into the same directory as the compiled plugin dll to run the plugin. The opencv dll should be located in *opencv_install_dir\build\x64\vc15\bin*. 
