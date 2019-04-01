@@ -167,6 +167,7 @@ At this point, you should have a binary build of the OpenCV library of your choi
 4. Build. Choose Build For Proﬁling, this will build the Release version of the plugin.
 
 *The following steps are only necessary if you are using an OpenCV library that's below or above 3.4.* 
+
 5. Once the build is successful and complete, by default, the compiled *.plugin will be saved in a temporary directory.
 Please follow [these instructions](https://docs.derivative.ca/Experimental:Custom_Operators#Building_on_macOS_using_XCode) from Derivative to get at your plugin. Alternatively, you can also set your *File -> Project Settings -> Per-User Project Settings -> Advanced -> Build Location* to Custom and Relative to Workspace. This will put all your builds relative to your xcode project.
 
@@ -176,7 +177,7 @@ Please follow [these instructions](https://docs.derivative.ca/Experimental:Custo
 
 7. Add/Modify in Run Script Phase. The purpose of this step is to modify the executable to use the dylib that was copied into the plugin bundle during the Copy Resources phase. This way, you do not need to install Opencv in an expected path, it will also help with confusions caused by different versions, as homebrew is not very fond of different versions. 
     1. Go to Build Phase, Add the Run Script phase. If you are using the Xcode project we have provided, you will just need to modify the shell script, this step can be skipped.
-    2. Add/Modify in the following shell script (There are ONLY two lines. NOTE THE LINE BREAKS! Make sure DYLIB in the shell script is set to the same lib name you got from Step 6. Name ONLY, no paths, as the path will be added for you by the script. 
+    2. Add/Modify the following shell script (There are ONLY two lines. NOTE THE LINE BREAKS! Make sure DYLIB in the shell script is set to the same lib name you got from Step 6. Name ONLY, no paths, as the path will be added for you by the script. 
 
     ````
     export DYLIB=libopencv_world.3.4.dylib 
