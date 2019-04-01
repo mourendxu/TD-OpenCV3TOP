@@ -129,3 +129,21 @@ opencv\build\etc contains the cascade files you need. The names are self-explana
 3. Open CMake, Click on *Browse Source*, and navigate to the directory where you have extracted the source code to, i.e. */Users/your_name/Documents/opencv.3.4.4*
 4. Create a build directory. i.e. */Users/your_name/Documents/opencv.3.4.4/build*
 5. Click on *Browse Build*, and navigate to the build directory you have created in Step 4.
+6. Click *Conﬁgure*. Choose *Unix Makeﬁle* in the dialog that pops up. Then let CMake ﬁgure out the build conﬁgurations. 
+7. Once Step 6 has ﬁnished, check **BUILD_opencv_world** option in the newly generated conﬁguration options.
+8. Modify **CMAKE_INSTALL_PREFIX** to point to where you may want to install the build to. i.e. */Users/your_name/Documents/opencv_3.4.4*
+9. Click *Generate* to generate the make ﬁles.
+10. Open up Terminal, and cd into the build directory you have created in Step 4.
+11. Enter the command *make*. This will build the library.
+12. Once the build has ﬁnished successfully, enter the command *make install* to install the built binaries, headers, etc into the directory you have speciﬁed in **CMAKE_INSTALL_PREFIX**.
+13. Done.
+
+
+### Build Instructions for CV3 FaceDetect TOP
+#### Mac OSX
+*You will need to make the following modifications to the xcode project you downloaded from your repos.*
+
+
+1. Add/Modify Framework reference to opencv library
+    1. If you are using our xcode project, which is recommended, you will need to first delete the existing reference to OpenCV world dylib.
+    2. 
