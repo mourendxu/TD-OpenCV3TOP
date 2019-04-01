@@ -14,6 +14,13 @@ _**The Binary Release has been built against:**_
 - OpenCV version 3.4.4 for **Mac** and 3.4.5 for **Windows**.
 
 
+## Table of Contents
+1. [Release Notes](https://github.com/mourendxu/TD-OpenCV3TOP#release-notes-v15-3312019)
+2. [How Does It Work?](https://github.com/mourendxu/TD-OpenCV3TOP#how-does-it-work)
+3. [Usage](https://github.com/mourendxu/TD-OpenCV3TOP#usage)
+4. [Build Instructions](https://github.com/mourendxu/TD-OpenCV3TOP#build-instructions)
+    1. [Building Checklist](https://github.com/mourendxu/TD-OpenCV3TOP#checklist-before-you-run-build)
+
 _**Functionality/Purpose:**_
 
 This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
@@ -23,12 +30,7 @@ Though OpenCV has already been integrated into TD, it's done via Python, which i
 
 
 
-## Table of Contents
-1. [Release Notes](https://github.com/mourendxu/TD-OpenCV3TOP#release-notes-v15-3312019)
-2. [How Does It Work?](https://github.com/mourendxu/TD-OpenCV3TOP#how-does-it-work)
-3. [Usage](https://github.com/mourendxu/TD-OpenCV3TOP#usage)
-4. [Build Instructions](https://github.com/mourendxu/TD-OpenCV3TOP#build-instructions)
-    1. [Building Checklist]()
+
 
 ## Release Notes v1.5 3/31/2019
 Yes, we skipped over a few minor versions. But since we added quite a few things to this release, we feel we deserve the 1.5.
