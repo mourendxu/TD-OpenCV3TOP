@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55F6C39D224FF0790047A295 /* libopencv_world.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F6C39C224FF0790047A295 /* libopencv_world.3.4.dylib */; };
+		55F6C39E224FF07D0047A295 /* libopencv_world.3.4.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 55F6C39C224FF0790047A295 /* libopencv_world.3.4.dylib */; };
+		E278881E1E002FC1002C9CEE /* CV3FaceDetectTOP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E278881B1E002FC1002C9CEE /* CV3FaceDetectTOP.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55F6C39C224FF0790047A295 /* libopencv_world.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_world.3.4.dylib; path = ../../../opencv/lib/libopencv_world.3.4.dylib; sourceTree = "<group>"; };
+		E27888111E002F6C002C9CEE /* CV3FaceDetectTOP.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CV3FaceDetectTOP.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E27888141E002F6C002C9CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E278881A1E002FC1002C9CEE /* CPlusPlus_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlusPlus_Common.h; sourceTree = SOURCE_ROOT; };
+		E278881B1E002FC1002C9CEE /* CV3FaceDetectTOP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CV3FaceDetectTOP.cpp; sourceTree = SOURCE_ROOT; };
+		E278881C1E002FC1002C9CEE /* CV3FaceDetectTOP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CV3FaceDetectTOP.h; sourceTree = SOURCE_ROOT; };
+		E278881D1E002FC1002C9CEE /* TOP_CPlusPlusBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOP_CPlusPlusBase.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E278880E1E002F6C002C9CEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F6C39D224FF0790047A295 /* libopencv_world.3.4.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		556450692249E9E100DB45C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55F6C39C224FF0790047A295 /* libopencv_world.3.4.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E27888081E002F6C002C9CEE = {
+			isa = PBXGroup;
+			children = (
+				E2A53C5A1E019BE700883FA9 /* CV3FaceDetectTOP */,
+				E27888121E002F6C002C9CEE /* Products */,
+				556450692249E9E100DB45C2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E27888121E002F6C002C9CEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E27888111E002F6C002C9CEE /* CV3FaceDetectTOP.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2A53C5A1E019BE700883FA9 /* CV3FaceDetectTOP */ = {
+			isa = PBXGroup;
+			children = (
+				E278881A1E002FC1002C9CEE /* CPlusPlus_Common.h */,
+				E278881B1E002FC1002C9CEE /* CV3FaceDetectTOP.cpp */,
+				E278881C1E002FC1002C9CEE /* CV3FaceDetectTOP.h */,
+				E278881D1E002FC1002C9CEE /* TOP_CPlusPlusBase.h */,
+				E27888141E002F6C002C9CEE /* Info.plist */,
+			);
+			name = CV3FaceDetectTOP;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E27888101E002F6C002C9CEE /* CV3FaceDetectTOP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E27888171E002F6C002C9CEE /* Build configuration list for PBXNativeTarget "CV3FaceDetectTOP" */;
+			buildPhases = (
+				E278880D1E002F6C002C9CEE /* Sources */,
+				E278880E1E002F6C002C9CEE /* Frameworks */,
+				E278880F1E002F6C002C9CEE /* Resources */,
+				5564506D2249EA8100DB45C2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CV3FaceDetectTOP;
+			productName = CPUMemoryTOP;
+			productReference = E27888111E002F6C002C9CEE /* CV3FaceDetectTOP.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E27888091E002F6C002C9CEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Derivative;
+				TargetAttributes = {
+					E27888101E002F6C002C9CEE = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E278880C1E002F6C002C9CEE /* Build configuration list for PBXProject "CV3FaceDetectTOP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E27888081E002F6C002C9CEE;
+			productRefGroup = E27888121E002F6C002C9CEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E27888101E002F6C002C9CEE /* CV3FaceDetectTOP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E278880F1E002F6C002C9CEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F6C39E224FF07D0047A295 /* libopencv_world.3.4.dylib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5564506D2249EA8100DB45C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Added by Da Xu 1/15/2019\n# If you are going to compile against openCV below 3.4 or above 3.4.4, which would be 4.0 at this point, make sure you change the DYLIB reference\nexport DYLIB=libopencv_world.3.4.dylib\ninstall_name_tool -change @rpath/$DYLIB @loader_path/../Resources/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.plugin/Contents/MacOS/$PRODUCT_NAME\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E278880D1E002F6C002C9CEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E278881E1E002FC1002C9CEE /* CV3FaceDetectTOP.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E27888151E002F6C002C9CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E27888161E002F6C002C9CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E27888181E002F6C002C9CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /Users/daxu/Documents/Dev/opencv/include;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/daxu/Documents/Dev/opencv/lib,
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.plgrm.CV3FaceDetectTOP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		E27888191E002F6C002C9CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /Users/daxu/Documents/Dev/opencv/include;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/daxu/Documents/Dev/opencv/lib,
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.plgrm.CV3FaceDetectTOP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E278880C1E002F6C002C9CEE /* Build configuration list for PBXProject "CV3FaceDetectTOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E27888151E002F6C002C9CEE /* Debug */,
+				E27888161E002F6C002C9CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E27888171E002F6C002C9CEE /* Build configuration list for PBXNativeTarget "CV3FaceDetectTOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E27888181E002F6C002C9CEE /* Debug */,
+				E27888191E002F6C002C9CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E27888091E002F6C002C9CEE /* Project object */;
+}
