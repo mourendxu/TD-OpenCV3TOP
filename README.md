@@ -175,6 +175,7 @@ Please follow [these instructions](https://docs.derivative.ca/Experimental:Custo
     1. *otool -L plugin_name.plugin/Contents/MacOS/executable_name* 
     
     Make sure you replace the plug_name and executable names accordingly. *\*Tip, use tab to auto-complete your path and file names. Google tab auto complete if in doubt*
+    
     2. In the output, look for the @loader_path string, speciﬁcally the library name(without the path) it is pointing to.
 
 7. Add/Modify in Run Script Phase. The purpose of this step is to modify the executable to use the dylib that was copied into the plugin bundle during the Copy Resources phase. This way, you do not need to install Opencv in an expected path, it will also help with confusions caused by different versions, as homebrew is not very fond of different versions. 
