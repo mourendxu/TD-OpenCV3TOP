@@ -59,9 +59,9 @@ See Greg Finger's demo projects for usage, particularly on how to deal with the 
 ### Binary Release
 A quick word on **Windows** vs. **Mac**
 
-Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to do this part yourself. Please see instructions below. We chose this path due to the fact that this particular task is rather trivial. We try not to include external libraries in our binary release unless absolutely necessary. 
+Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to do this part yourself. Please refer to the instructions below. We chose this path due to the fact that this particular task is rather trivial for the user. We try not to include external libraries in our binary release unless absolutely necessary. 
 
-Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. That's why we decided to package everything together into a single unit. 
+Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. Plus, OpenCV does not provide a binary release of their library for Mac. That's why we have decided to package everything together into a single unit. The amount of work required to get everything working on **Mac** has exceeded our standard for convenience. 
 
 
 
@@ -70,14 +70,12 @@ Such is the case with **Mac**. Since Apple has decided to hide the standard LD_L
 
 
 #### Experimental
-Please follow the instructions on Touchdesigner Wiki with regard to [how to install the Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
+Please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
 
 
 
 
-## Demo
-I have included a compiled version of the DLL. However, you still need to download the OpenCV dlls from opencv.org to make the demo run. You also need the latest version of Touchdesigner, which at this moment is 2018.25000. 
-
+#### Windows-specific Instructions for Running
 You need to put the opencv world dll into the same directory as OpenCV3TOP.dll. 
 
 Specific instructions below:
