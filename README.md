@@ -20,6 +20,10 @@ _**The Binary Release has been built against:**_
 3. [Usage](https://github.com/mourendxu/TD-OpenCV3TOP#usage)
 4. [Build Instructions](https://github.com/mourendxu/TD-OpenCV3TOP#build-instructions)
     1. [Building Checklist](https://github.com/mourendxu/TD-OpenCV3TOP#checklist-before-you-run-build)
+    2. [OpenCV Build Instructions for Mac](https://github.com/mourendxu/TD-OpenCV3TOP#opencv-build-instructions-for-mac)
+    3. [Build Instructions for Mac](https://github.com/mourendxu/TD-OpenCV3TOP#build-instructions-for-cv3-facedetect-top)
+    4. [Build Instructions for Windows](https://github.com/mourendxu/TD-OpenCV3TOP#windows)
+5. [Todos/Other](https://github.com/mourendxu/TD-OpenCV3TOP#other)
 
 _**Functionality/Purpose:**_
 
