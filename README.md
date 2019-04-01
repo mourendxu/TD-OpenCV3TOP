@@ -8,6 +8,12 @@ _**Contributors**_
 
 
 
+_**The Binary Release has been built against:**_
+- **Stable** Touchdesinger 2018.27910
+- **Experimental** Touchdesigner 2019.12330
+- OpenCV version 3.4.4. \*3.4.5 will work as well.
+
+
 
 This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
 
@@ -59,19 +65,26 @@ See Greg Finger's demo projects for usage, particularly on how to deal with the 
 ### Binary Release
 A quick word on **Windows** vs. **Mac**
 
-Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to do this part yourself. Please refer to the instructions below. We chose this path due to the fact that this particular task is rather trivial for the user. We try not to include external libraries in our binary release unless absolutely necessary. 
+Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to handle this part yourself. Please refer to the instructions below. It's quite painless. We chose this path due to the fact that this particular task is rather trivial for the user. We try not to include external libraries in our binary release unless absolutely necessary. 
 
-Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. Plus, OpenCV does not provide a binary release of their library for Mac. That's why we have decided to package everything together into a single unit. The amount of work required to get everything working on **Mac** has exceeded our standard for convenience. 
+Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. On top of that, OpenCV does not provide a binary release of their library for Mac. That's why we have decided to package everything together into a single unit. The amount of work required to get everything working on **Mac** has exceeded our standard for convenience. 
 
 
 
-#### Stable
+#### Stable Touchdesigner Build
+You will load the plugin the same as any other Cplusplus plugin. 
 
+**Windows** users will need to copy and paste the OpenCV plugin into the same directory as the binary release DLL. 
+
+**Mac** Nothing to do.
 
 
 #### Experimental
 Please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
 
+**Windows** users will need to copy and paste the OpenCV plugin into the same directory as the binary release DLL. 
+
+**Mac** Nothing to do. 
 
 
 
