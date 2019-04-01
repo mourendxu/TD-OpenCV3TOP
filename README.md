@@ -141,9 +141,20 @@ opencv\build\etc contains the cascade files you need. The names are self-explana
 
 ### Build Instructions for CV3 FaceDetect TOP
 #### Mac OSX
-*You will need to make the following modifications to the xcode project you downloaded from your repos.*
+*You will need to make the following modifications to the xcode project you downloaded from our repos.*
 
+At this point, you should have a binary build of the OpenCV library of your choice on your local hard drive. *opencv_install_dir* from here and on will be used to refer to this location.
 
-1. Add/Modify Framework reference to opencv library
+1. Add/Modify Framework reference to opencv library. 
     1. If you are using our xcode project, which is recommended, you will need to first delete the existing reference to OpenCV world dylib.
-    2. 
+    2. Navigate to **General -> Linked Frameworks and Libraries**. *If you don't know how to get to this panel, please ask Google*
+    3. Use Finder and navigate to your OpenCV install directory, under *lib*, there should be several world libraries. Two of them will be aliases or symlinks to the actual build. 
+    4. Then from Finder, Drag and Drop (DO NOT use the plus sign, this will dereference the alias) the alias with only the major and minor version, i.e. *libopencv_world.3.4.dylib*. This ﬁle will be needed for linking and packaging.
+    
+2. Add Search Paths for Headers and Libraries 
+    1. Navigate to **Build Settings -> Search Paths**. *Again, if you don't know how to get to this panel, please ask Google*
+    2. Add *opencv_install_dir/include* to **Header Search Paths**
+    3. Add *opencv_install_dir/lib* to **Library Search Paths**
+    4. MAKE SURE you have added paths to both the Debug and Release schemes/profiles. You can check this by clicking on the triangle next to **Header Search Paths** and **Library Search Paths**
+
+3. 
