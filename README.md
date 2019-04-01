@@ -28,10 +28,10 @@ Yes, we skipped over a few minor versions. But since we added quite a few things
 
 - The plugin is now **cross-platform**. We now have binary releases for both **Mac** and **Windows**, along with the necessary code and project files to build it on your own, if you so choose.
 - The plugin now supports both Touchdesigner **Stable** and **Experimental** branches. The Experimental branch has implemented a new way of dealing with C++ plugins, and it allows users to utilize C++ plugins without a Commercial or Pro License. Make sure you use the correct binary release for the branch of TD you are using.
-- Greg Finger has created a demo toe file for the Experimental branch.
+- Greg Finger has created a demo toe file for the Touchdesigner Experimental branch.
 - Extensive updates have been made to the documentation. We now include instructions on how to build OpenCV on Mac, as well as build instructions for the plugin.
 - scaleFactor has been exposed to the user via parameters.
-- The plugin now forces 32 bit float data format.
+- The plugin now forces 32 bit float output format.
 
 
 
@@ -41,9 +41,9 @@ Yes, we skipped over a few minor versions. But since we added quite a few things
 - Once face(s) has been detected, the detection results are passed out via **Info Dat AND Pixel Packing**.
 Results are packed into the output frame (RGBA32Float) in the following manner:
 
-- The 1st Pixel's R contains how many faces have been detected. 
+- In the output frame, the 1st Pixel's R contains how many faces have been detected. 
 
-- I use the RGBA channels of the subsequent pixels to store (x, y, width, height) of the detected face(s), in the order that they have been detected.
+- I then use the RGBA channels of the subsequent pixels to store (x, y, width, height) of the detected face(s), in the order that they have been detected.
 
 
 - There is a Sanity Check toggle that let's you see exactly what the detector sees. *This feature is only available on Windows.*
@@ -69,7 +69,7 @@ See Greg Finger's demo projects for usage, particularly on how to deal with the 
 ### Binary Release
 A quick word on **Windows** vs. **Mac**
 
-Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to handle this part yourself. Please refer to the instructions below. It's quite painless. We chose this path due to the fact that this particular task is rather trivial for the user. We try not to include external libraries in our binary release unless absolutely necessary. 
+Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to handle this part yourself. Please refer to the instructions below. It's quite painless. We chose this path due to the fact that this particular task is rather trivial for the user. We try our best not to include external libraries in our binary release unless absolutely necessary. 
 
 Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. On top of that, OpenCV does not provide a binary release of their library for Mac. That's why we have decided to package everything together into a single unit. The amount of work required to get everything working on **Mac** has exceeded our standards for convenience. 
 
@@ -116,15 +116,15 @@ opencv\build\etc contains the cascade files you need. The names are self-explana
 **Checklist before you run Build**
 
 * OpenCV Library. This will include the headers, dynamic library for compiling, and DLL or dylib for running. **Windows** users can download binary releases from OpenCV's website. **Mac** users will have to download the source code and build their own, build instructions for the OpenCV library are below.
-* Set the correct Headers search path. This will most likely be *opencv_install_dir/build/include* on **Windows** and *opencv_install_dir/include* on **Mac**. 
-* Set the correct Library search path. This will most likely be *opencv_install_dir/build/x64/vc15/lib* on **Windows** and *opencv_install_dir/lib* on **Mac**.
+* Set the correct Headers search path. This will most likely be *opencv_install_dir\build\include* on **Windows** and *opencv_install_dir/include* on **Mac**. 
+* Set the correct Library search path. This will most likely be *opencv_install_dir\build\x64\vc15\lib* on **Windows** and *opencv_install_dir/lib* on **Mac**.
 * Set the dynamic library name. See specific instructions below.
 
 
 
 ### OpenCV Build Instructions for Mac
 
-1. Download and install the [CMake binary distribution](https://cmake.org/download/)
+1. Download and install [CMake binary](https://cmake.org/download/)
 2. Download and extract OpenCV source code, i.e. */Users/your_name/Documents/opencv.3.4.4* 
 3. Open CMake, Click on *Browse Source*, and navigate to the directory where you have extracted the source code to, i.e. */Users/your_name/Documents/opencv.3.4.4*
 4. Create a build directory. i.e. */Users/your_name/Documents/opencv.3.4.4/build*
@@ -139,22 +139,46 @@ opencv\build\etc contains the cascade files you need. The names are self-explana
 13. Done.
 
 
+
+
 ### Build Instructions for CV3 FaceDetect TOP
 #### Mac OSX
-*You will need to make the following modifications to the xcode project you downloaded from our repos.*
+*You will need to make the following modifications to the xcode project that you've downloaded from our repos.*
 
 At this point, you should have a binary build of the OpenCV library of your choice on your local hard drive. *opencv_install_dir* from here and on will be used to refer to this location.
 
 1. Add/Modify Framework reference to opencv library. 
     1. If you are using our xcode project, which is recommended, you will need to first delete the existing reference to OpenCV world dylib.
-    2. Navigate to **General -> Linked Frameworks and Libraries**. *If you don't know how to get to this panel, please ask Google*
+    2. Then navigate to **General -> Linked Frameworks and Libraries**. *If you don't know how to get to this panel, please ask Google*
     3. Use Finder and navigate to your OpenCV install directory, under *lib*, there should be several world libraries. Two of them will be aliases or symlinks to the actual build. 
     4. Then from Finder, Drag and Drop (DO NOT use the plus sign, this will dereference the alias) the alias with only the major and minor version, i.e. *libopencv_world.3.4.dylib*. This ﬁle will be needed for linking and packaging.
-    
-2. Add Search Paths for Headers and Libraries 
+
+2. Add/Modify Search Paths for Headers and Libraries 
     1. Navigate to **Build Settings -> Search Paths**. *Again, if you don't know how to get to this panel, please ask Google*
     2. Add *opencv_install_dir/include* to **Header Search Paths**
     3. Add *opencv_install_dir/lib* to **Library Search Paths**
     4. MAKE SURE you have added paths to both the Debug and Release schemes/profiles. You can check this by clicking on the triangle next to **Header Search Paths** and **Library Search Paths**
 
-3. 
+3. Add/Modify Copy Bundle Resources
+    1. Navigate to **Build Phases -> Copy Bundle Resources**
+    2. If there is already an item in this phase, remove it.
+    3. Click the plus sign, and add from Frameworks, the major and minor named opencv lib, i.e. libopencv_world.3.4.dylib, that was added in Step 1. 
+
+4. Build. Choose Build For Proﬁling, this will build the Release version of the plugin.
+
+*The following steps are only necessary if you are using an OpenCV library that's below or above 3.4.* 
+5. Once the build is successful and complete, by default, the compiled *.plugin will be saved in a temporary directory.
+Please follow [these instructions](https://docs.derivative.ca/Experimental:Custom_Operators#Building_on_macOS_using_XCode) from Derivative to get at your plugin. Alternatively, you can also set your *File -> Project Settings -> Per-User Project Settings -> Advanced -> Build Location* to Custom and Relative to Workspace. This will put all your builds relative to your xcode project.
+
+6. Once you have access to the compiled plugin, you need to open **Terminal** and run the following command on your plugin. *Make sure you are in the same directory as your plugin*
+    1. *otool -L plugin_name.plugin/Contents/MacOS/executable_name*. Make sure you replace the plug_name and executable names accordingly. *\*Tip, use tab to auto-complete your path and file names. Google tab auto complete if in doubt*
+    2. In the output, look for the @loader_path string, speciﬁcally the library name(without the path) it is pointing to.
+
+7. Add/Modify in Run Script Phase. The purpose of this step is to modify the executable to use the dylib that was copied into the plugin bundle during the Copy Resources phase. This way, you do not need to install Opencv in an expected path, it will also help with confusions caused by different versions, as homebrew is not very fond of different versions. 
+    1. Go to Build Phase, Add the Run Script phase. If you are using the Xcode project we have provided, you will just need to modify the shell script, this step can be skipped.
+    2. Add/Modify in the following shell script (There are ONLY two lines. NOTE THE LINE BREAKS! Make sure DYLIB in the shell script is set to the same lib name you got from Step 6. Name ONLY, no paths, as the path will be added for you by the script. 
+
+    ````
+    export DYLIB=libopencv_world.3.4.dylib 
+    install_name_tool -change @rpath/$DYLIB @loader_path/../ Resources/$DYLIB “$TARGET_BUILD_DIR/$TARGET_NAME.plugin/ Contents/MacOS/$PRODUCT_NAME”
+    ````
