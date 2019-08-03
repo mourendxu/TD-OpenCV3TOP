@@ -99,7 +99,7 @@ We now include OpenCV with our releases. You no longer need to do that yourself.
 
 
 #### - Installing Custom Operator
-Please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Custom_Operators) 
+If you wan to "install" the plugin for all your projects, please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Custom_Operators) 
 
 
 ## Build Instructions
