@@ -3,15 +3,18 @@
 
 _**Contributors**_
 
+- **[Greg Finger of PLGRM Visuals](https://github.com/gregfinger)** - *Development, Demo Projects, Testing and Foreman/Instigator*
 - **Da Xu** - *Development and Documentation*
-- **[Greg Finger of PLGRM Visuals](https://github.com/gregfinger)** - *Development, Demo Projects, Testing and Foreman*
+
 
 
 
 _**The Binary Release has been built against:**_
-- **Stable** Touchdesinger 2018.27910
-- **Experimental** Touchdesigner 2019.12330
+Touchdesigner 2019.12330
 - OpenCV version 3.4.4 for **Mac** and 3.4.5 for **Windows**.
+
+_**The Binary Release has been tested against:**_
+Touchdesigner Build 2019.17550
 
 
 ## Table of Contents
@@ -25,14 +28,22 @@ _**The Binary Release has been built against:**_
     4. [Build Instructions for Windows](https://github.com/mourendxu/TD-OpenCV3TOP#windows)
 5. [Todos/Other](https://github.com/mourendxu/TD-OpenCV3TOP#other)
 
+
 _**Functionality/Purpose:**_
 
-This plugin adds the OpenCV FaceDetect functionality to TD via a C++ TOP. 
+This plugin adds the OpenCV FaceDetect functionality to TD via [Custom Operators](https://docs.derivative.ca/Custom_Operators). 
 
 
-Though OpenCV has already been integrated into TD, it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in a way that can be acted upon immediately. It makes the whole process much more streamlined and faster.
+Though OpenCV has already been integrated into TD, it's done via Python, which is not terribly convenient when you have to deal with streams of data. This plugin now allows you to pipe data from any TOP straight into the OpenCV algorithms and spit out data in a way that can be acted upon immediately. It makes the whole process much more streamlined and therefore faster.
 
 
+
+
+
+## Release Notes v1.5.1 8/3/2019
+We are dropping support for the previous style of Cplusplus operators. If you need copies of those, binary or source code, please check the 1.5 tag.
+
+We have tested this release against the latest stable build at this time, Build 2019.17550. Everything works as intended.
 
 
 
@@ -52,20 +63,21 @@ Yes, we skipped over a few minor versions. But since we added quite a few things
 
 ## How Does It Work?
 
-- Once face(s) has been detected, the detection results are passed out via **Info Dat AND Pixel Packing**.
+- Once face(s) has been detected, the detection results are then passed out via **Info Dat AND Pixel Packing**.
 Results are packed into the output frame (RGBA32Float) in the following manner:
 
 - In the output frame, the 1st Pixel's R contains how many faces have been detected. 
 
-- I then use the RGBA channels of the subsequent pixels to store (x, y, width, height) of the detected face(s), in the order that they have been detected.
+- We then use the RGBA channels of the subsequent pixels to store (x, y, width, height) of the detected face(s), in the order that they have been detected.
 
 
 - There is a Sanity Check toggle that let's you see exactly what the detector sees. *This feature is only available on Windows.*
 
-- If no face was found, the first pixel will be 0 across the board.
+- If no face was found, the first pixel will be 0, across its RGBA channels.
 
 
-Please check Greg Finger's demo Touchdesigner project to see how to use this C++ TOP. AGAIN, you WILL NEED a Commercial or Pro license if you are working with the Stable branch of Touchdesigner.
+Please check Greg Finger's demo Touchdesigner project to see how to use this custom operator. 
+
 
 ## Additional Notes
 We have exposed most of the parameters of the detectMulti call as custom parameters. Min and Max search sizes have been expressed as a ratio in relation to the input height. You can drop an Info CHOP down to see the exact size of each in pixels.
@@ -81,55 +93,20 @@ See Greg Finger's demo projects for usage, particularly on how to deal with the 
 
 
 ### Binary Release
-A quick word on **Windows** vs. **Mac**
+We have restructured our directories to fully take advantage of the new [Custom Operators folder location](https://docs.derivative.ca/Custom_Operators#Using_Custom_OPs_-_Plugin_Folder_Locations). With the latest build from Derivative, you should be able to just download the repo, and run the demo toe. No extra work needed.
 
-Our binary release for **Windows** does not contain the necessary OpenCV DLL to run the plugin. You will need to handle this part yourself. Please refer to the instructions below. It's quite painless. We chose this path due to the fact that this particular task is rather trivial for the user. We try our best not to include external libraries in our binary release unless absolutely necessary. 
-
-Such is the case with **Mac**. Since Apple has decided to hide the standard LD_LIBRARY_PATH from the user, getting the plugin to see the correct dynamic library has become a pain. On top of that, OpenCV does not provide a binary release of their library for Mac. That's why we have decided to package everything together into a single unit. The amount of work required to get everything working on **Mac** has exceeded our standards for convenience. 
+We now include OpenCV with our releases. You don't have to download your own copies anymore.
 
 
-
-#### - Stable Touchdesigner Build
-You will load the plugin the same as any other Cplusplus plugin. 
-
-**Windows** users will need to copy and paste the OpenCV world DLL into the same directory as the binary release DLL. 
-
-**Mac** Nothing to do.
-
-
-#### - Experimental Build
-Please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Experimental:Custom_Operators) 
-
-**Windows** users will need to copy and paste the OpenCV plugin into the same directory as the binary release DLL. 
-
-**Mac** Nothing to do. 
-
-
-
-#### Windows-specific Instructions for using the plugin
-You need to put the opencv world dll into the same directory as our binary release. 
-
-Detailed instructions:
-
-1. Goto [opencv.org's Releases page](https://opencv.org/releases.html), and download the Win Pack. 
-
-2. Run downloaded exe file. It will ask you to extract the libs to a location of your choice. Find a nice and warm cozy place for it, then click extract.
-
-3. Once the extraction is done, open up Explorer, and go to the dir that you have extracted to. 
-
-4. There should be an opencv dir, go into it, and then goto build\x64\vc14\bin. 
-
-5. Copy the opencv_world*version_number*.dll to the same directory as our binary release. NOTE: **DO NOT USE** THE opencv_world*version_number*d.dll. That's for debugging. It's hella slow.
-
-opencv\build\etc contains the cascade files you need. The names are self-explanatory.
-
+#### - Installing Custom Operator
+Please follow the instructions from Touchdesigner Wiki on [how to install Custom OPs](https://docs.derivative.ca/Custom_Operators) 
 
 
 ## Build Instructions
 
-### **Checklist before you run Build**
+### **Checklist/TODOs before you run Build**
 
-* OpenCV Library. This will include the headers, dynamic library for compiling, and DLL or dylib for running. **Windows** users can download binary releases from OpenCV's website. **Mac** users will have to download the source code and build their own, build instructions for the OpenCV library are below.
+* OpenCV Library. This includes the headers, dynamic library for compiling, and DLL or dylib for running. **Windows** users can download binary releases from OpenCV's website. **Mac** users will have to download the source code and build their own, build instructions for the OpenCV library are below.
 * Set the correct Headers search path. This will most likely be *opencv_install_dir\build\include* on **Windows** and *opencv_install_dir/include* on **Mac**. 
 * Set the correct Library search path. This will most likely be *opencv_install_dir\build\x64\vc15\lib* on **Windows** and *opencv_install_dir/lib* on **Mac**.
 * Set the dynamic library name. See specific instructions below.
@@ -230,4 +207,4 @@ Please follow [these instructions](https://docs.derivative.ca/Experimental:Custo
 
 ### Other
 * If the CS gods be willing, we might do a CUDA version of this plugin. The documentation might be as long as this one.
-* Have fun and maybe make a TD version of TikTok.
+* Have fun and go make a TD version of TikTok.
