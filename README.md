@@ -93,7 +93,7 @@ See Greg Finger's demo projects for usage, particularly on how to deal with the 
 
 
 ### Binary Release
-We have restructured our directories to fully take advantage of the new [Custom Operators folder location](https://docs.derivative.ca/Custom_Operators#Using_Custom_OPs_-_Plugin_Folder_Locations). With the latest build from Derivative, you should be able to just download the repo, and run the demo toe. No extra work needed.
+We have restructured our directories to take full advantage of the new [Custom Operators folder location](https://docs.derivative.ca/Custom_Operators#Using_Custom_OPs_-_Plugin_Folder_Locations). With the latest build from Derivative, you should be able to just download the repo, and run the demo toe. No extra work needed.
 
 We now include OpenCV with our releases. You don't have to download your own copies anymore.
 
